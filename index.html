@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Media Plan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Digital Marketing Media Plan Generator</h1>
+        <div class="form-group">
+            <label for="budget">Media Budget ($):</label>
+            <input type="number" id="budget" placeholder="Enter your budget">
+        </div>
+        <div class="form-group">
+            <label for="industry">Select Industry:</label>
+            <select id="industry"></select>
+        </div>
+        <div class="form-group">
+            <label for="channels">Select Marketing Channels:</label>
+            <div id="channel-selection"></div> <!-- This will hold the checkboxes for selecting channels -->
+        </div>
+        <i>Make sure the total equals 100%.</i>
+        <h2>Marketing Channel Allocation</h2>
+        <canvas id="pie-chart"></canvas>
+        <h2>Generated Media Plan</h2>        
+        <table id="media-plan">
+            <thead>
+                <tr>
+                    <th>Channel</th>
+                    <th>Impressions</th>
+                    <th>Clicks</th>
+                    <th>CTR* (%)</th>
+                    <th>CPC* ($)</th>
+                    <th>CPM ($)</th>
+                    <th>Conversions</th>
+                    <th>Conv Rate* (%)</th>
+                    <th>Cost ($)</th>
+                    <th>Cost per Conv ($)</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <i>*Fixed Metrics, source: <a href="https://www.wordstream.com/blog/ws/2016/02/29/google-adwords-industry-benchmarks" target="_blank">Google Ads</a>, <a href="https://www.wordstream.com/blog/ws/2017/02/28/facebook-advertising-benchmarks" target="_blank">Facebook Ads</a>, <a href="https://www.wordstream.com/blog/ws/2019/04/01/shopping-ads-benchmarks" target="_blank">Google & Bing Shopping</a>, <a href="https://www.wordstream.com/blog/ws/2017/11/06/bing-ads-performance-benchmarks" target="_blank">Bing Search</a>. </i>
+        <!-- Existing chart for Impressions vs Clicks -->
+        <canvas id="chart-impressions-clicks" width="800" height="400"></canvas>
+        <!-- New chart for Conversions vs Cost -->
+        <canvas id="chart-conversions-cost" width="800" height="400" style="display:none;"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
