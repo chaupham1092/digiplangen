@@ -6,6 +6,20 @@
     <title>Digital Marketing Media Plan</title>
     <link rel="stylesheet" href="style.css">
 
+    <!-- GTM Code -->
+  <script>
+      async function loadGTM() {
+        const response = await fetch('gtm.html');
+        const gtmCode = await response.text();
+        const parser = new DOMParser();
+        const gtmDocument = parser.parseFromString(gtmCode, 'text/html');
+        document.head.insertAdjacentHTML('afterbegin', gtmDocument.querySelector('script').outerHTML);
+        document.body.insertAdjacentHTML('afterbegin', gtmDocument.querySelector('noscript').outerHTML);
+      }
+      loadGTM();
+    </script>
+
+
     
 
 </head>
